@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "nyc-ride-duration-prediction"
+version = "0.1.0"
+description = "Prediction of ride duration of NYC Dataset"
+authors = ["Bertan ULUSOY <bertan_ulusoy@yahoo.com>"]
+readme = "README.md"
+packages = [{include = "nyc_ride_duration_prediction"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.0.1"
+numpy = "^1.24.3"
+pyarrow = "^12.0.0"
+fastparquet = "^2023.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
