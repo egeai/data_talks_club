@@ -54,6 +54,8 @@ def run_optimization(data_path: str, num_trials: int):
             mlflow.log_param("max_depth", params['max_depth'])
             mlflow.log_param("min_samples_split", params['min_samples_split'])
             mlflow.log_param("min_samples_leaf", params['min_samples_leaf'])
+            mlflow.log_param("random_state", params['random_state'])
+            mlflow.log_param("n_jobs", params['n_jobs'])
 
             mlflow.log_metric("rmse", rmse)
 
