@@ -45,17 +45,12 @@ def run_optimization(data_path: str, num_trials: int):
                 'n_jobs': -1
             }
 
+            mlflow.log_params(params)
+
             rf = RandomForestRegressor(**params)
             rf.fit(X_train, y_train)
             y_pred = rf.predict(X_val)
             rmse = mean_squared_error(y_val, y_pred, squared=False)
-
-            mlflow.log_param("n_estimators", params['n_estimators'])
-            mlflow.log_param("max_depth", params['max_depth'])
-            mlflow.log_param("min_samples_split", params['min_samples_split'])
-            mlflow.log_param("min_samples_leaf", params['min_samples_leaf'])
-            mlflow.log_param("random_state", params['random_state'])
-            mlflow.log_param("n_jobs", params['n_jobs'])
 
             mlflow.log_metric("rmse", rmse)
 
