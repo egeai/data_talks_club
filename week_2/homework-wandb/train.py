@@ -57,7 +57,7 @@ def run_train(
         pickle.dump(rf, f)
 
     # TODO: Log `regressor.pkl` as an artifact of type `model`
-    model_artifact = wandb.Artifact("regressor.pkl", type="model")
+    model_artifact = wandb.Artifact(f"{wandb.run.id}-model", type="model")
     model_artifact.add_file("regressor.pkl")
     wandb.log_artifact(model_artifact)
 
